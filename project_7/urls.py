@@ -23,5 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls', namespace='accounts')),
     url(r'^$', views.home, name='home'),
+    url('^', include('django.contrib.auth.urls')),  # Might need to go into the accounts url.py
+
 ]
 urlpatterns += staticfiles_urlpatterns()

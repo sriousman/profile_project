@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+{% block title %}Your Profile | {{ user.profile }}{% endblock %}
+
+{% block body %}
+    <div class="profile-header">
+        <h1>Welcome to your Profile, {{ user.profile | upper }}!</h1>
+    </div>
+
+    <hr>
+
+    <img src= "{% static  "" %}{{ user.profile.avatar.url }}">
+    <div class="container">
+        <form class="profile" enctype="multipart/form-data" method="post">
+
+            {% csrf_token %}
+
+                {{ user_form.as_p }}
+
+
+            <a href="{% url 'accounts:password_reset' %}">Reset Password</a>
+            <div class="profile-data">
+                {{ profile_form.as_p }}
+            </div>
+
+            <button type="submit">Save changes</button>
+        </form>
+
+    </div>
+{% endblock %}
+

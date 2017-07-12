@@ -1,0 +1,17 @@
+.profile-header {
+    text-align: center;
+}
+.container {
+    margin-left: 12%;
+    margin-right: 8%;
+    max-width: 70%;
+    padding: 10px;
+}
+
+.user-data {
+    float: left;
+}
+
+.profile-data {
+    clear: both;
+}
